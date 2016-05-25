@@ -1,5 +1,6 @@
 package com.jiajunyang.emosoundcontrol1;
 
+
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,13 +16,21 @@ import android.view.ViewTreeObserver;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.view.MotionEvent;
+import android.widget.Toast;
 
 import java.net.*;
 import java.util.*;
 import com.illposed.osc.*;
 
 
+
+
 public class MainActivity extends AppCompatActivity {
+
+//    SetIP setip = new SetIP();
+//    setip.hello();
+
+
 
     // Define UDP prt for send.
     private String myIP = "192.168.11.93";
@@ -33,10 +42,20 @@ public class MainActivity extends AppCompatActivity {
     // This is for sending messagign.
     private OSCPortOut oscPortOut;
 
-    public String enterIP(View view) {
-        EditText yourIP = (EditText) findViewById(R.id.ip_address);
-        myIP =  yourIP.getText().toString(); // myIP is global variable
+//    private void testIPFormat(String temp){
+//        // See if the input string is in the right format.
+//    }
 
+    public void enterIP(View view) {
+        EditText yourIP = (EditText) findViewById(R.id.ip_address);
+        try {
+            // This is not robust, you need to detect whether the input is in XXX.XXX.XX.XX form.
+            myIP = yourIP.getText().toString(); // myIP is global variable
+        } catch (NullPointerException e)
+        {
+            Log.d("Error", "Input address is NULL");
+        }
+        Toast.makeText(getApplicationContext(), "New IP is " + myIP, Toast.LENGTH_LONG).show();
     }
 
     // OSC thread for sending information.
@@ -55,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         public void run(){
             try{
                 // Connect to IP and port
+
                 oscPortOut  = new OSCPortOut(InetAddress.getByName(myIP), myPort);
             } catch(UnknownHostException e) {
                 Log.d("OSC2", "OSC Port Out UnknownHoseException");
@@ -68,7 +88,8 @@ public class MainActivity extends AppCompatActivity {
             /* 2nd loop infinitely and send messages every x ms.
             * */
             if (oscPortOut != null){
-                ArrayList<Object> messageToSend = new ArrayList<Object>();
+                ArrayList<Object> messageToSend = new ArrayList<>();
+                // ArrayList<Object> messageToSend = new ArrayList<Object>();
                 // Append message
                 messageToSend.add(Float.toString(x));
                 messageToSend.add(Float.toString(y));
