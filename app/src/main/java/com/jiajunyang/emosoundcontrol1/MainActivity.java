@@ -26,12 +26,6 @@ import com.illposed.osc.*;
 
 
 public class MainActivity extends AppCompatActivity {
-
-//    SetIP setip = new SetIP();
-//    setip.hello();
-
-
-
     // Define UDP prt for send.
     private String myIP = "192.168.11.93";
     private int myPort = 50010;
@@ -42,20 +36,26 @@ public class MainActivity extends AppCompatActivity {
     // This is for sending messagign.
     private OSCPortOut oscPortOut;
 
-//    private void testIPFormat(String temp){
-//        // See if the input string is in the right format.
-//    }
-
+    // currently there is a bug that simply click on the number box will trigger the validation?
     public void enterIP(View view) {
         EditText yourIP = (EditText) findViewById(R.id.ip_address);
+        boolean validIP = true;
+        IPAddressValidator ipvalidator = new IPAddressValidator();
+
         try {
             // This is not robust, you need to detect whether the input is in XXX.XXX.XX.XX form.
             myIP = yourIP.getText().toString(); // myIP is global variable
+            validIP = ipvalidator.validate(myIP);
         } catch (NullPointerException e)
         {
             Log.d("Error", "Input address is NULL");
         }
-        Toast.makeText(getApplicationContext(), "New IP is " + myIP, Toast.LENGTH_LONG).show();
+        if (validIP){
+            Toast.makeText(getApplicationContext(), "New IP is " + myIP, Toast.LENGTH_LONG).show();
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Invalid IP, correct format,e.g. 192.168.0.1, 255.255.255.255.", Toast.LENGTH_LONG).show();
+        }
     }
 
     // OSC thread for sending information.
@@ -102,11 +102,12 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-    };
+    }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
