@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             // This is not robust, you need to detect whether the input is in XXX.XXX.XX.XX form.
             myIP = yourIP.getText().toString(); // myIP is global variable
+
             validIP = ipvalidator.validate(myIP);
         } catch (NullPointerException e)
         {
