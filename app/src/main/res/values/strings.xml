@@ -16,4 +16,9 @@
     <string name="calm">Calm</string>
     <string name="disgusted">Disgusted</string>
     <string name="afraid">Afraid</string>
+    <string name="degree">Degree:</string>
+    <string name="na">N/A</string>
+    <string name="weak">Weak</string>
+    <string name="average">Average</string>
+    <string name="strong">Strong</string>
 </resources>
