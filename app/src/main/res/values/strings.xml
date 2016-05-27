@@ -7,4 +7,13 @@
     <string name="nextSound">Next</string>
     <string name="playSound">Play</string>
     <string name="emotion">Emotion:</string>
+    <string name="happy">Happy</string>
+    <string name="surprised">Surprised</string>
+    <string name="sad">Sad</string>
+    <string name="neutral">Neutral</string>
+    <string name="angry">Angry</string>
+    <string name="tired">Tired</string>
+    <string name="calm">Calm</string>
+    <string name="disgusted">Disgusted</string>
+    <string name="afraid">Afraid</string>
 </resources>
