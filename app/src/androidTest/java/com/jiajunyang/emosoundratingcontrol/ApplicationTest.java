@@ -1,4 +1,4 @@
-package com.jiajunyang.emosoundcontrol1;
+package com.jiajunyang.emosoundratingcontrol;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

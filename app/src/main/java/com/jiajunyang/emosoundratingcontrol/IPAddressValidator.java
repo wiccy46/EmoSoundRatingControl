@@ -1,4 +1,4 @@
-package com.jiajunyang.emosoundcontrol1;
+package com.jiajunyang.emosoundratingcontrol;
 
 /**
  * Created by jiajunyang on 26/05/16.

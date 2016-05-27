@@ -1,4 +1,4 @@
-package com.jiajunyang.emosoundcontrol1;
+package com.jiajunyang.emosoundratingcontrol;
 
 import org.junit.Test;
 
