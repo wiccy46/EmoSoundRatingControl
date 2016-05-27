@@ -12,7 +12,9 @@
         <activity
             android:name="com.jiajunyang.emosoundratingcontrol.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="landscape"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +22,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.jiajunyang.emosoundratingcontrol.Test"></activity> // This is needed when you have multiple activities.
+        <activity
+            android:name="com.jiajunyang.emosoundratingcontrol.Test"
+            android:screenOrientation="landscape"
+            ></activity> // This is needed when you have multiple activities.
     </application>
 
 </manifest>

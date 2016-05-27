@@ -4,4 +4,6 @@
     <string name="welcome">Welcome to EmoSonic.</string>
     <string name="enterIPHint">Enter IP:</string>
     <string name="startTest">Begin</string>
+    <string name="nextSound">Next</string>
+    <string name="playSound">Play</string>
 </resources>

@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Now it begins"
-        android:id="@+id/textView2"
-        android:textSize="60dp" />
+        android:layout_marginTop="100dp">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/playButton"
+            android:singleLine="false"
+            android:text="@string/playSound"
+            android:textSize="70dp"
+            android:layout_weight="1"
+            android:layout_marginRight="200dp"
+            android:layout_marginLeft="100dp" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nextSound"
+            android:id="@+id/button"
+            android:textSize="70dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="200dp"
+            android:layout_marginRight="100dp" />
+    </LinearLayout>
 </LinearLayout>
