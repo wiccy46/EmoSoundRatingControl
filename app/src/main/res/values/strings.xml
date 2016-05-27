@@ -6,4 +6,5 @@
     <string name="startTest">Begin</string>
     <string name="nextSound">Next</string>
     <string name="playSound">Play</string>
+    <string name="emotion">Emotion:</string>
 </resources>
