@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 //    // This is for sending messagign.
 //    private OSCPortOut oscPortOut;
 
-    // currently there is a bug that simply click on the number box will trigger the validation?
+    // currently there is shapea bug that simply click on the number box will trigger the validation?
 //    public void enterIP(View view) {
 //        EditText yourIP = (EditText) findViewById(R.id.ip_address);
 //        boolean validIP = true;
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 //                // Append message
 //                messageToSend.add(Float.toString(x));
 //                messageToSend.add(Float.toString(y));
-//                OSCMessage message = new OSCMessage("/a", messageToSend);
+//                OSCMessage message = new OSCMessage("/shapea", messageToSend);
 //                try{
 //                    // Send messages
 //                    oscPortOut.send(message);
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        // as you specify shapea parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement

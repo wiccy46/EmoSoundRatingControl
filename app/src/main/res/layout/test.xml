@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="fill_parent"
     android:weightSum="1"
     android:orientation="vertical"
     android:id="@+id/layoutHolder">
@@ -12,22 +12,27 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:background="@color/accent_material_dark"
-        android:id="@+id/topSection">
+        android:id="@+id/topSection"
+        android:layout_weight="0.15">
 
         <Button
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:id="@+id/playButton"
             android:singleLine="false"
             android:text="@string/playSound"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:textSize="@dimen/abc_action_bar_progress_bar_size" />
 
         <Button
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:text="@string/nextSound"
             android:id="@+id/nextButton"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:textSize="@dimen/abc_action_bar_progress_bar_size" />
     </LinearLayout>
 
     <LinearLayout
@@ -35,20 +40,24 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@color/design_fab_shadow_mid_color"
-        android:id="@+id/middleSection">
+        android:id="@+id/middleSection"
+        android:layout_weight="0.35">
 
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/emotionTitle"
-            android:text="@string/emotion" />
+            android:text="@string/emotion"
+            android:layout_weight="0.1"
+            android:textSize="@dimen/abc_action_bar_progress_bar_size"
+            android:background="@color/accent_material_dark" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/accent_material_dark">
+            android:layout_height="wrap_content"
+            android:layout_weight="0.9">
 
             <RadioGroup
                 android:layout_width="match_parent"
@@ -60,63 +69,99 @@
                     android:layout_height="wrap_content"
                     android:text="@string/happy"
                     android:id="@+id/happyRB"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:background="@drawable/buttonbackground"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:padding="1dp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/surprised"
                     android:id="@+id/surprisedRB"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="@drawable/buttonbackground"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:padding="1dp"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/angry"
                     android:id="@+id/angryRB"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="@drawable/buttonbackground"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:padding="1dp"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/afraid"
                     android:id="@+id/afraidRB"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="@drawable/buttonbackground"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:padding="1dp"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/neutral"
                     android:id="@+id/neutralRB"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="@drawable/buttonbackground"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:padding="1dp"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/disgusted"
                     android:id="@+id/disgustedRB"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="@drawable/buttonbackground"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:padding="1dp"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/sad"
                     android:id="@+id/sadRB"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="@drawable/buttonbackground"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:padding="1dp"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/tired"
                     android:id="@+id/tiredRB"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="@drawable/buttonbackground"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:padding="1dp"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/calm"
                     android:id="@+id/calmRB"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="@drawable/buttonbackground"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:padding="1dp"/>
             </RadioGroup>
         </LinearLayout>
     </LinearLayout>
@@ -125,20 +170,24 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/bottomSection">
+        android:id="@+id/bottomSection"
+        android:layout_weight="0.5">
 
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/degree"
-            android:id="@+id/degreeTitle" />
+            android:id="@+id/degreeTitle"
+            android:layout_weight="0.1"
+            android:textSize="@dimen/abc_action_bar_progress_bar_size"
+            android:background="@color/accent_material_dark" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/accent_material_dark">
+            android:layout_height="wrap_content"
+            android:layout_weight="0.9">
 
             <RadioGroup
                 android:layout_width="match_parent"
@@ -151,28 +200,46 @@
                     android:layout_height="wrap_content"
                     android:text="@string/na"
                     android:id="@+id/naRB"
-                    android:layout_weight="1" />
+                    android:background="@drawable/buttonbackground"
+                    android:button="@android:color/transparent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="1dp"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/weak"
                     android:id="@+id/weakRB"
-                    android:layout_weight="1"/>
+                    android:background="@drawable/buttonbackground"
+                    android:button="@android:color/transparent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="1dp"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/average"
                     android:id="@+id/averageRB"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="@drawable/buttonbackground"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:padding="1dp"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/strong"
                     android:id="@+id/strongRB"
-                    android:layout_weight="1"/>
+                    android:background="@drawable/buttonbackground"
+                    android:button="@android:color/transparent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="1dp"/>
+
+
 
             </RadioGroup>
         </LinearLayout>
