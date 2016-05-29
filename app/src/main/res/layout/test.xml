@@ -35,7 +35,8 @@
             android:layout_weight="1"
             android:layout_gravity="center_vertical"
             android:textSize="@dimen/abc_action_bar_progress_bar_size"
-            android:layout_marginLeft="10dp" />
+            android:layout_marginLeft="10dp"
+            android:onClick="onNextClick" />
     </LinearLayout>
 
     <LinearLayout

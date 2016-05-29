@@ -12,17 +12,15 @@ import java.util.ArrayList;
  * Created by jiajunyang on 29/05/16.
  */
 public class OSCSend implements Runnable{
-    private String myIP;
-    private int myPort;
-    private String action; // action define what function it uses.
-    private OSCPortOut oscPortOut;
+    String myIP;
+    int myPort;
+    String action; // action define what function it uses.
+    OSCPortOut oscPortOut;
 
-    // Updating parameters
+    // Updating parameters and setup OSC port out.
     public OSCSend(String myIP, int myPort, String action){
         this.myIP = myIP;
         this.myPort = myPort;
-        Log.d("OSCSendInitalisation", "IP is " + myIP);
-        Log.d("OSCSendInitalisation", "Port is " + myPort);
         this.action = action;
         try{
             // Connect to IP and port
@@ -38,10 +36,25 @@ public class OSCSend implements Runnable{
         }
     }
 
+    // This function is for the play button
     private void play(){
         ArrayList<Object> sendBang = new ArrayList<>();
-        sendBang.add(1.0f);
+        sendBang.add("bang");
         OSCMessage message = new OSCMessage("/play", sendBang);
+        Log.d("OSCRun", "Play Sound.");
+        try{
+            // Send messages
+            oscPortOut.send(message);
+        } catch (Exception e){
+            Log.d("OSC2", "Failed to send.");
+        }
+    }
+
+    private void next(){
+        ArrayList<Object> sendBang = new ArrayList<>();
+        sendBang.add("bang");
+        OSCMessage message = new OSCMessage("/next", sendBang);
+        Log.d("OSCRun", "Next Sound.");
         try{
             // Send messages
             oscPortOut.send(message);
@@ -55,20 +68,15 @@ public class OSCSend implements Runnable{
     @Override
     public void run(){
         if (oscPortOut != null){
-            ArrayList<Object> sendBang = new ArrayList<>();
-            sendBang.add("kick");
-            OSCMessage message = new OSCMessage("/play", sendBang);
-            Log.d("OSCRun", "Play Sound.");
-            try{
-                // Send messages
-                oscPortOut.send(message);
-            } catch (Exception e){
-                Log.d("OSC2", "Failed to send.");
+            Log.d("OSCRun", "The action is : " + action );
+            // Dont know why swich case doesnt work.
+            if (action == "play"){
+                play();
+
             }
-//            switch (action){
-//                case "play":
-//                    play();
-//            }
+            else if (action == "next") {
+                next();
+            }
         }
     }
 }
