@@ -16,12 +16,16 @@ public class OSCSend implements Runnable{
     int myPort;
     String action; // action define what function it uses.
     OSCPortOut oscPortOut;
+    int emoIndex;
+    int degreeIndex;
 
     // Updating parameters and setup OSC port out.
-    public OSCSend(String myIP, int myPort, String action){
+    public OSCSend(String myIP, int myPort, String action, int emoIndex, int degreeIndex){
         this.myIP = myIP;
         this.myPort = myPort;
         this.action = action;
+        this.emoIndex = emoIndex;
+        this.degreeIndex = degreeIndex;
         try{
             // Connect to IP and port
             this.oscPortOut  = new OSCPortOut(InetAddress.getByName(myIP), myPort);
@@ -63,6 +67,45 @@ public class OSCSend implements Runnable{
         }
     }
 
+    private void save(){
+        ArrayList<Object> sendBang = new ArrayList<>();
+        sendBang.add("bang");
+        OSCMessage message = new OSCMessage("/save", sendBang);
+        Log.d("OSCRun", "Finish test and save file.");
+        try{
+            // Send messages
+            oscPortOut.send(message);
+        } catch (Exception e){
+            Log.d("OSC2", "Failed to send.");
+        }
+    }
+
+    private void emo(){
+        ArrayList<Object> sendBang = new ArrayList<>();
+        sendBang.add(emoIndex);
+        OSCMessage message = new OSCMessage("/emo", sendBang);
+        Log.d("OSCRun", "Emotion Index: " + emoIndex);
+        try{
+            // Send messages
+            oscPortOut.send(message);
+        } catch (Exception e){
+            Log.d("OSC2", "Failed to send.");
+        }
+    }
+
+    private void degree(){
+        ArrayList<Object> sendBang = new ArrayList<>();
+        sendBang.add(degreeIndex);
+        OSCMessage message = new OSCMessage("/degree", sendBang);
+        Log.d("OSCRun", "Degree Index: " + degreeIndex);
+        try{
+            // Send messages
+            oscPortOut.send(message);
+        } catch (Exception e){
+            Log.d("OSC2", "Failed to send.");
+        }
+    }
+
 
     // Run the thread.
     @Override
@@ -76,6 +119,19 @@ public class OSCSend implements Runnable{
             }
             else if (action == "next") {
                 next();
+            }
+            else if (action == "emo"){
+                emo();
+            }
+            else if (action == "degree"){
+                degree();
+            }
+            else if (action == "save"){
+                save();
+            }
+
+            else{
+                Log.d("OSC Action Error: ", "OSC Action Error."); // Need to change it to a Toast.
             }
         }
     }

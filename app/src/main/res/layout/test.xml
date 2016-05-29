@@ -68,7 +68,8 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:background="@color/abc_search_url_text_normal"
-                android:alpha="0.9">
+                android:alpha="0.9"
+                android:id="@+id/emoRadioGroup">
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -81,7 +82,8 @@
                     android:gravity="center"
                     android:layout_gravity="center_vertical"
                     android:paddingTop="5dp"
-                    android:paddingBottom="5dp" />
+                    android:paddingBottom="5dp"
+                    android:onClick="onEmoChoice" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -94,7 +96,8 @@
                     android:gravity="center"
                     android:layout_gravity="center_vertical"
                     android:paddingTop="5dp"
-                    android:paddingBottom="5dp" />
+                    android:paddingBottom="5dp"
+                    android:onClick="onEmoChoice" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -107,7 +110,8 @@
                     android:gravity="center"
                     android:layout_gravity="center_vertical"
                     android:paddingTop="5dp"
-                    android:paddingBottom="5dp" />
+                    android:paddingBottom="5dp"
+                    android:onClick="onEmoChoice" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -120,7 +124,9 @@
                     android:gravity="center"
                     android:layout_gravity="center_vertical"
                     android:paddingTop="5dp"
-                    android:paddingBottom="5dp" />
+                    android:paddingBottom="5dp"
+                    android:nestedScrollingEnabled="false"
+                    android:onClick="onEmoChoice" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -133,7 +139,8 @@
                     android:gravity="center"
                     android:layout_gravity="center_vertical"
                     android:paddingTop="5dp"
-                    android:paddingBottom="5dp" />
+                    android:paddingBottom="5dp"
+                    android:onClick="onEmoChoice" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -146,7 +153,8 @@
                     android:gravity="center"
                     android:layout_gravity="center_vertical"
                     android:paddingTop="5dp"
-                    android:paddingBottom="5dp" />
+                    android:paddingBottom="5dp"
+                    android:onClick="onEmoChoice" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -159,7 +167,8 @@
                     android:gravity="center"
                     android:layout_gravity="center_vertical"
                     android:paddingTop="5dp"
-                    android:paddingBottom="5dp" />
+                    android:paddingBottom="5dp"
+                    android:onClick="onEmoChoice" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -172,7 +181,8 @@
                     android:gravity="center"
                     android:layout_gravity="center_vertical"
                     android:paddingTop="5dp"
-                    android:paddingBottom="5dp" />
+                    android:paddingBottom="5dp"
+                    android:onClick="onEmoChoice" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -185,7 +195,8 @@
                     android:gravity="center"
                     android:layout_gravity="center_vertical"
                     android:paddingTop="5dp"
-                    android:paddingBottom="5dp" />
+                    android:paddingBottom="5dp"
+                    android:onClick="onEmoChoice" />
             </RadioGroup>
         </LinearLayout>
     </LinearLayout>
@@ -218,7 +229,8 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:background="@color/abc_search_url_text_normal"
-                android:alpha="0.9">
+                android:alpha="0.9"
+                android:id="@+id/degreeRadioGroup">
 
 
                 <RadioButton
@@ -232,7 +244,8 @@
                     android:gravity="center"
                     android:layout_gravity="center_vertical"
                     android:paddingTop="10dp"
-                    android:paddingBottom="10dp" />
+                    android:paddingBottom="10dp"
+                    android:onClick="onDegreeChoice" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -245,7 +258,8 @@
                     android:gravity="center"
                     android:layout_gravity="center_vertical"
                     android:paddingTop="10dp"
-                    android:paddingBottom="10dp" />
+                    android:paddingBottom="10dp"
+                    android:onClick="onDegreeChoice" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -259,7 +273,8 @@
                     android:layout_gravity="center_vertical"
                     android:checked="false"
                     android:paddingTop="10dp"
-                    android:paddingBottom="10dp" />
+                    android:paddingBottom="10dp"
+                    android:onClick="onDegreeChoice" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -272,7 +287,8 @@
                     android:gravity="center"
                     android:layout_gravity="center_vertical"
                     android:paddingTop="10dp"
-                    android:paddingBottom="10dp" />
+                    android:paddingBottom="10dp"
+                    android:onClick="onDegreeChoice" />
 
 
 
