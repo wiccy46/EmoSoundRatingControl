@@ -11,7 +11,6 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:background="@color/accent_material_dark"
         android:id="@+id/topSection"
         android:layout_weight="0.15">
 
@@ -23,7 +22,10 @@
             android:text="@string/playSound"
             android:layout_weight="1"
             android:layout_gravity="center_vertical"
-            android:textSize="@dimen/abc_action_bar_progress_bar_size" />
+            android:textSize="@dimen/abc_action_bar_progress_bar_size"
+            android:allowUndo="false"
+            android:layout_marginRight="10dp"
+            android:onClick="onPlayClick" />
 
         <Button
             android:layout_width="fill_parent"
@@ -32,7 +34,8 @@
             android:id="@+id/nextButton"
             android:layout_weight="1"
             android:layout_gravity="center_vertical"
-            android:textSize="@dimen/abc_action_bar_progress_bar_size" />
+            android:textSize="@dimen/abc_action_bar_progress_bar_size"
+            android:layout_marginLeft="10dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -62,7 +65,9 @@
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:background="@color/abc_search_url_text_normal"
+                android:alpha="0.9">
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -73,7 +78,9 @@
                     android:background="@drawable/buttonbackground"
                     android:button="@android:color/transparent"
                     android:gravity="center"
-                    android:padding="1dp" />
+                    android:layout_gravity="center_vertical"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -84,7 +91,9 @@
                     android:background="@drawable/buttonbackground"
                     android:button="@android:color/transparent"
                     android:gravity="center"
-                    android:padding="1dp"/>
+                    android:layout_gravity="center_vertical"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -95,7 +104,9 @@
                     android:background="@drawable/buttonbackground"
                     android:button="@android:color/transparent"
                     android:gravity="center"
-                    android:padding="1dp"/>
+                    android:layout_gravity="center_vertical"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -106,7 +117,9 @@
                     android:background="@drawable/buttonbackground"
                     android:button="@android:color/transparent"
                     android:gravity="center"
-                    android:padding="1dp"/>
+                    android:layout_gravity="center_vertical"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -117,7 +130,9 @@
                     android:background="@drawable/buttonbackground"
                     android:button="@android:color/transparent"
                     android:gravity="center"
-                    android:padding="1dp"/>
+                    android:layout_gravity="center_vertical"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -128,7 +143,9 @@
                     android:background="@drawable/buttonbackground"
                     android:button="@android:color/transparent"
                     android:gravity="center"
-                    android:padding="1dp"/>
+                    android:layout_gravity="center_vertical"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -139,7 +156,9 @@
                     android:background="@drawable/buttonbackground"
                     android:button="@android:color/transparent"
                     android:gravity="center"
-                    android:padding="1dp"/>
+                    android:layout_gravity="center_vertical"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -150,7 +169,9 @@
                     android:background="@drawable/buttonbackground"
                     android:button="@android:color/transparent"
                     android:gravity="center"
-                    android:padding="1dp"/>
+                    android:layout_gravity="center_vertical"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -161,7 +182,9 @@
                     android:background="@drawable/buttonbackground"
                     android:button="@android:color/transparent"
                     android:gravity="center"
-                    android:padding="1dp"/>
+                    android:layout_gravity="center_vertical"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp" />
             </RadioGroup>
         </LinearLayout>
     </LinearLayout>
@@ -192,7 +215,9 @@
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:background="@color/abc_search_url_text_normal"
+                android:alpha="0.9">
 
 
                 <RadioButton
@@ -204,7 +229,9 @@
                     android:button="@android:color/transparent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:padding="1dp"/>
+                    android:layout_gravity="center_vertical"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -215,7 +242,9 @@
                     android:button="@android:color/transparent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:padding="1dp"/>
+                    android:layout_gravity="center_vertical"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -226,7 +255,10 @@
                     android:background="@drawable/buttonbackground"
                     android:button="@android:color/transparent"
                     android:gravity="center"
-                    android:padding="1dp"/>
+                    android:layout_gravity="center_vertical"
+                    android:checked="false"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -237,7 +269,9 @@
                     android:button="@android:color/transparent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:padding="1dp"/>
+                    android:layout_gravity="center_vertical"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
 
 
 

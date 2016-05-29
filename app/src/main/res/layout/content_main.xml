@@ -13,37 +13,67 @@
     tools:showIn="@layout/activity_main">
 
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/welcome"
-        android:textSize="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:id="@+id/ip_address"
-        android:inputType="number|numberDecimal"
-        android:digits="0123456789."
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:hint="@string/enterIPHint"
-        android:onClick="enterIP"
-        android:layout_marginBottom="72dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/startTest"
-        android:id="@+id/StartTest"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="50dp"
-        android:onClick="onStartButton" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:id="@+id/titleLayout">
+
+            <TextView
+                android:id="@+id/welcomeTexView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome"
+                android:textSize="40sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:id="@+id/informationLayout">
+
+            <EditText
+                android:id="@+id/ip_address"
+                android:inputType="number|numberDecimal"
+                android:digits="0123456789."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:hint="@string/enterIPHint"
+                android:onClick="enterIP"
+                android:layout_marginBottom="72dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:id="@+id/startLayout">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/startTest"
+                android:id="@+id/StartTest"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textSize="50dp"
+                android:onClick="onStartButton" />
+        </LinearLayout>
+    </LinearLayout>
 
 
 </RelativeLayout>
