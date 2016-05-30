@@ -31,7 +31,7 @@
       -->
     <string name="welcome">Welcome to EmoSonic.</string>
     <string name="startTest">Begin</string>
-    <string name="enterIPHint">Enter IP:</string>
+    <string name="enterIPHint">Default 192.168.0.1</string>
     <string name="studyprefix">Study Prefix: </string>
     <string name="userid">UserID: </string>
     <string name="username">Username: </string>

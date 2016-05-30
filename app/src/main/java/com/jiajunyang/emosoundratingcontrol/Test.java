@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 /**
  * Created by jiajunyang on 27/05/16.
@@ -15,7 +16,7 @@ import android.widget.RadioGroup;
 
 
 public class Test extends Activity {
-    private String myIP = "192.168.11.93";
+    private String myIP = MainActivity.retriveIP();
     private int myPort = 7110;
     private String action;
 
@@ -29,6 +30,7 @@ public class Test extends Activity {
     private int count = nrStim;
 
     public void onPlayClick(View view) {
+        Toast.makeText(getApplicationContext(), "New IP is " + myIP, Toast.LENGTH_LONG).show();
         action = "play";
         Thread play = new Thread(new OSCSend(myIP, myPort, action, 0, 0));
         play.start();

@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     boolean validIP;
+    public static String ip  = "192.168.0.1";
 
 
     @Override
@@ -71,12 +72,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onStartButton(View view) {
-        String myIP = getIP();
-
+        ip = getIP();
         // Need to OSC the init info to python here.
 
         if (validIP == true){
-            Toast.makeText(getApplicationContext(), "New IP is " + myIP, Toast.LENGTH_LONG).show();
+//            Toast.makeText(getApplicationContext(), "New IP is " + ip, Toast.LENGTH_LONG).show();
             if (view.getId() == R.id.StartTest) {
                 Intent i = new Intent(MainActivity.this, Test.class);
                 startActivity(i);
@@ -85,7 +85,11 @@ public class MainActivity extends AppCompatActivity {
         else {
             Toast.makeText(getApplicationContext(), "Invalid IP, correct format,e.g. 192.168.0.1, 255.255.255.255. Try again", Toast.LENGTH_LONG).show();
         }
+    }
 
-
+    // This is to let Test.java retrive IP address.
+    public static String retriveIP()
+    {
+        return ip;
     }
 }
