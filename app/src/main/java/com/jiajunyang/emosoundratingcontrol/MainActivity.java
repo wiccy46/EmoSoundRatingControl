@@ -6,9 +6,12 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 /*
@@ -19,6 +22,8 @@ import android.view.MenuItem;
 
 
 public class MainActivity extends AppCompatActivity {
+    boolean validIP;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +61,31 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void onStartButton(View view) {
+    public String getIP(){
+        String myIP;
+        EditText yourIP = (EditText) findViewById(R.id.ipText);
+        IPAddressValidator ipvalidator = new IPAddressValidator();
+        myIP = yourIP.getText().toString();
+        validIP = ipvalidator.validate(myIP);
+        return myIP;
+    }
 
-        if (view.getId() == R.id.StartTest) {
-            Intent i = new Intent(MainActivity.this, Test.class);
-            startActivity(i);
+    public void onStartButton(View view) {
+        String myIP = getIP();
+
+        // Need to OSC the init info to python here.
+
+        if (validIP == true){
+            Toast.makeText(getApplicationContext(), "New IP is " + myIP, Toast.LENGTH_LONG).show();
+            if (view.getId() == R.id.StartTest) {
+                Intent i = new Intent(MainActivity.this, Test.class);
+                startActivity(i);
+            }
         }
+        else {
+            Toast.makeText(getApplicationContext(), "Invalid IP, correct format,e.g. 192.168.0.1, 255.255.255.255. Try again", Toast.LENGTH_LONG).show();
+        }
+
+
     }
 }

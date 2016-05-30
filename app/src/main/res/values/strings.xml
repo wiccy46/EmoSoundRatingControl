@@ -27,6 +27,7 @@
 
     <!--
       This part is for the main page information enter.
+
       -->
     <string name="welcome">Welcome to EmoSonic.</string>
     <string name="startTest">Begin</string>
@@ -39,4 +40,6 @@
     <string name="nrstim">NrStim: </string>
     <string name="abs">Abstract: </string>
     <string name="vocal">Vocal: </string>
+    <string name="ip">IP: </string>
+    <string name="prefixExample">rating-emo9</string>
 </resources>

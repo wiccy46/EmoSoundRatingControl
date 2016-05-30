@@ -22,7 +22,7 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -37,7 +37,6 @@
                     android:layout_height="wrap_content"
                     android:text="@string/welcome"
                     android:textSize="40sp"
-                    android:layout_alignParentTop="true"
                     android:layout_alignParentStart="true"
                     android:textColor="#000000" />
             </LinearLayout>
@@ -61,25 +60,27 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="IP: "
+                        android:text="@string/ip"
                         android:id="@+id/ipViewHeader"
-                        android:textSize="30dp"
-                        android:textColor="@color/abc_input_method_navigation_guard" />
+                        android:textSize="30sp"
+                        android:textColor="#000000" />
 
                     <EditText
-                        android:id="@+id/ip_address"
-                        android:inputType="number|numberDecimal"
-                        android:digits="0123456789."
-                        android:layout_width="fill_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:textSize="30dp"
-                        android:onClick="enterIP"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentStart="true"
-                        android:hint="192.168.0.1" />
+                        android:id="@+id/ipText"
+                        android:layout_weight="1"
+                        android:hint="@string/enterIPHint"
+                        android:textSize="30sp" />
 
 
                 </LinearLayout>
+                <!--
+
+                          android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+  -->
+
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -90,7 +91,7 @@
 
                     <LinearLayout
                         android:orientation="horizontal"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0.5">
 
@@ -103,13 +104,12 @@
                             android:textColor="#000000" />
 
                         <EditText
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:id="@+id/prefixText"
                             android:layout_weight="1"
-                            android:hint="rating-emo9"
-                            android:onClick="enterPrefix"
-                            android:textSize="30dp" />
+                            android:hint="@string/prefixExample"
+                            android:textSize="30sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -125,18 +125,17 @@
                         android:layout_height="wrap_content"
                         android:text="@string/userid"
                         android:id="@+id/idViewHeader"
-                        android:textSize="30dp"
+                        android:textSize="30sp"
                         android:textColor="#000000" />
 
                     <EditText
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:inputType="number"
                         android:ems="10"
                         android:id="@+id/idText"
                         android:hint="3001"
-                        android:textSize="30dp"
-                        android:onClick="enterUserid"
+                        android:textSize="30sp"
                         android:layout_weight="1" />
                 </LinearLayout>
 
@@ -152,18 +151,17 @@
                         android:layout_height="wrap_content"
                         android:text="@string/username"
                         android:id="@+id/usernameViewHeader"
-                        android:textSize="30dp"
+                        android:textSize="30sp"
                         android:textColor="#000000" />
 
                     <EditText
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:id="@+id/uernameText"
                         android:layout_weight="1"
                         android:hint="@string/myname"
-                        android:onClick="enterMyname"
                         android:textIsSelectable="false"
-                        android:textSize="30dp" />
+                        android:textSize="30sp" />
 
                 </LinearLayout>
 
@@ -179,7 +177,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/soundmodel"
                         android:id="@+id/modelViewHeader"
-                        android:textSize="30dp"
+                        android:textSize="30sp"
                         android:textColor="#000000" />
 
                     <RadioGroup
@@ -245,7 +243,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/run"
                             android:id="@+id/runViewHeader"
-                            android:textSize="30dp"
+                            android:textSize="30sp"
                             android:textColor="#000000" />
 
                         <EditText
@@ -255,8 +253,7 @@
                             android:ems="10"
                             android:id="@+id/runText"
                             android:hint="0"
-                            android:textSize="30dp"
-                            android:onClick="enterRun" />
+                            android:textSize="30sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -270,7 +267,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/nrstim"
                             android:id="@+id/runView"
-                            android:textSize="30dp"
+                            android:textSize="30sp"
                             android:textColor="#000000" />
 
                         <EditText
@@ -280,8 +277,7 @@
                             android:ems="10"
                             android:id="@+id/nrstimText"
                             android:hint="0"
-                            android:textSize="30dp"
-                            android:onClick="enterNrstim" />
+                            android:textSize="30sp" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -302,7 +298,7 @@
                     android:id="@+id/StartTest"
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
-                    android:textSize="50dp"
+                    android:textSize="50sp"
                     android:onClick="onStartButton" />
             </LinearLayout>
         </LinearLayout>
