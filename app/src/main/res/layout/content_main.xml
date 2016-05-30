@@ -99,7 +99,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/studyprefix"
                             android:id="@+id/prefixViewHeader"
-                            android:textSize="30dp"
+                            android:textSize="30sp"
                             android:textColor="#000000" />
 
                         <EditText
