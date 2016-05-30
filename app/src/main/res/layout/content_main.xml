@@ -108,7 +108,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/prefixText"
                             android:layout_weight="1"
-                            android:hint="@string/prefixExample"
+                            android:text="@string/prefixExample"
                             android:textSize="30sp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -134,7 +134,7 @@
                         android:inputType="number"
                         android:ems="10"
                         android:id="@+id/idText"
-                        android:hint="3001"
+                        android:text="3001"
                         android:textSize="30sp"
                         android:layout_weight="1" />
                 </LinearLayout>
@@ -157,9 +157,9 @@
                     <EditText
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/uernameText"
+                        android:id="@+id/usernameText"
                         android:layout_weight="1"
-                        android:hint="@string/myname"
+                        android:text="@string/myname"
                         android:textIsSelectable="false"
                         android:textSize="30sp" />
 
@@ -185,7 +185,9 @@
                         android:layout_height="match_parent"
                         android:id="@+id/modelRadioGroup"
                         android:orientation="horizontal"
-                        android:layout_weight="0.5">
+                        android:layout_weight="0.5"
+                        android:checkedButton="@+id/abstractRB"
+                        >
 
 
                         <RadioButton
@@ -252,7 +254,7 @@
                             android:inputType="number"
                             android:ems="10"
                             android:id="@+id/runText"
-                            android:hint="0"
+                            android:text="0"
                             android:textSize="30sp" />
                     </LinearLayout>
 
@@ -276,7 +278,7 @@
                             android:inputType="number"
                             android:ems="10"
                             android:id="@+id/nrstimText"
-                            android:hint="0"
+                            android:text="0"
                             android:textSize="30sp" />
                     </LinearLayout>
 

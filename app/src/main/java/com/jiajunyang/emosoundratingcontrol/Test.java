@@ -11,7 +11,7 @@ import android.widget.Toast;
  * Created by jiajunyang on 27/05/16.
  * This is the actual testin class, which sends actions according to the buttons.
  * Including: play sound, next, what emotion, what degree of emotion.
- * ToDo set up main page as the parameters setup. Parameters needs to be sent here.
+ *
  */
 
 
@@ -30,7 +30,6 @@ public class Test extends Activity {
     private int count = nrStim;
 
     public void onPlayClick(View view) {
-        Toast.makeText(getApplicationContext(), "New IP is " + myIP, Toast.LENGTH_LONG).show();
         action = "play";
         Thread play = new Thread(new OSCSend(myIP, myPort, action, 0, 0));
         play.start();

@@ -40,6 +40,16 @@
     <string name="nrstim">NrStim: </string>
     <string name="abs">Abstract: </string>
     <string name="vocal">Vocal: </string>
-    <string name="ip">IP: </string>
+    <string name="ip">IP*: </string>
     <string name="prefixExample">rating-emo9</string>
+
+
+
+    <!--
+  For toast
+  -->
+
+    <string name="nullInput">Null Input, try again.</string>
+    <string name="invalidIP">Invalid IP, correct format,e.g. 192.168.0.1, 255.255.255.255. Try again</string>
+
 </resources>
