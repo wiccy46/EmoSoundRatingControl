@@ -1,32 +1,32 @@
 package com.jiajunyang.emosoundratingcontrol;
 
-
 import android.app.Activity;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RadioGroup.OnCheckedChangeListener;
-
-
 
 /**
  * Created by jiajunyang on 27/05/16.
+ * This is the actual testin class, which sends actions according to the buttons.
+ * Including: play sound, next, what emotion, what degree of emotion.
+ * ToDo set up main page as the parameters setup. Parameters needs to be sent here.
  */
 
 
 public class Test extends Activity {
-    private String myIP = "192.168.0.2";
-    private int myPort = 50010;
+    private String myIP = "192.168.11.93";
+    private int myPort = 7110;
     private String action;
 
     private RadioGroup emoChoice;
     private RadioGroup degreeChoice;
 
+    // Currently this needs to be replaced from the main page.
+    private int nrStim = 4;
+
     // This count is the num of stimulation, need to be replaced by user input.
-    private int count = 4;
+    private int count = nrStim;
 
     public void onPlayClick(View view) {
         action = "play";
@@ -45,7 +45,7 @@ public class Test extends Activity {
             action = "save";
             Thread play2 = new Thread(new OSCSend(myIP, myPort, action, 0, 0));
             play2.start();
-
+            count = nrStim;
         }
     }
 

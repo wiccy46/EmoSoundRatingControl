@@ -11,6 +11,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
+/*
+* Initial set up should go here.
+* This include:
+* IP, studyprefix, UserID, Username, Sound model, Run, NrStim.
+* */
+
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

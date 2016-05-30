@@ -111,7 +111,6 @@ public class OSCSend implements Runnable{
     @Override
     public void run(){
         if (oscPortOut != null){
-            Log.d("OSCRun", "The action is : " + action );
             // Dont know why swich case doesnt work.
             if (action == "play"){
                 play();

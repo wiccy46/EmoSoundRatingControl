@@ -13,67 +13,300 @@
     tools:showIn="@layout/activity_main">
 
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView"
+        android:fillViewport="true">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.1"
-            android:id="@+id/titleLayout">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/welcomeTexView"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/welcome"
-                android:textSize="40sp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.8"
-            android:id="@+id/informationLayout">
-
-            <EditText
-                android:id="@+id/ip_address"
-                android:inputType="number|numberDecimal"
-                android:digits="0123456789."
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="30dp"
-                android:hint="@string/enterIPHint"
-                android:onClick="enterIP"
-                android:layout_marginBottom="72dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true" />
-        </LinearLayout>
+                android:layout_weight="0.1"
+                android:id="@+id/titleLayout">
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.1"
-            android:id="@+id/startLayout">
+                <TextView
+                    android:id="@+id/welcomeTexView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/welcome"
+                    android:textSize="40sp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:textColor="#000000" />
+            </LinearLayout>
 
-            <Button
-                android:layout_width="fill_parent"
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/startTest"
-                android:id="@+id/StartTest"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
-                android:textSize="50dp"
-                android:onClick="onStartButton" />
+                android:layout_weight="0.8"
+                android:id="@+id/informationLayout">
+
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/infolayout1"
+                    android:layout_weight="0.1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="IP: "
+                        android:id="@+id/ipViewHeader"
+                        android:textSize="30dp"
+                        android:textColor="@color/abc_input_method_navigation_guard" />
+
+                    <EditText
+                        android:id="@+id/ip_address"
+                        android:inputType="number|numberDecimal"
+                        android:digits="0123456789."
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="30dp"
+                        android:onClick="enterIP"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentStart="true"
+                        android:hint="192.168.0.1" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/infolayout2"
+                    android:layout_weight="0.1">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/studyprefix"
+                            android:id="@+id/prefixViewHeader"
+                            android:textSize="30dp"
+                            android:textColor="#000000" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/prefixText"
+                            android:layout_weight="1"
+                            android:hint="rating-emo9"
+                            android:onClick="enterPrefix"
+                            android:textSize="30dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/infolayout3"
+                    android:layout_weight="0.1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/userid"
+                        android:id="@+id/idViewHeader"
+                        android:textSize="30dp"
+                        android:textColor="#000000" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:ems="10"
+                        android:id="@+id/idText"
+                        android:hint="3001"
+                        android:textSize="30dp"
+                        android:onClick="enterUserid"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/infolayout4"
+                    android:layout_weight="0.1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/username"
+                        android:id="@+id/usernameViewHeader"
+                        android:textSize="30dp"
+                        android:textColor="#000000" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/uernameText"
+                        android:layout_weight="1"
+                        android:hint="@string/myname"
+                        android:onClick="enterMyname"
+                        android:textIsSelectable="false"
+                        android:textSize="30dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/infolayout5"
+                    android:layout_weight="0.1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/soundmodel"
+                        android:id="@+id/modelViewHeader"
+                        android:textSize="30dp"
+                        android:textColor="#000000" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/modelRadioGroup"
+                        android:orientation="horizontal"
+                        android:layout_weight="0.5">
+
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/abs"
+                            android:id="@+id/abstractRB"
+                            android:background="@drawable/buttonbackground"
+                            android:button="@android:color/transparent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:onClick="onModelChoice" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/vocal"
+                            android:id="@+id/vocalRB"
+                            android:background="@drawable/buttonbackground"
+                            android:button="@android:color/transparent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:onClick="onModelChoice" />
+
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5">
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/infolayout6"
+                    android:layout_weight="0.1">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/run"
+                            android:id="@+id/runViewHeader"
+                            android:textSize="30dp"
+                            android:textColor="#000000" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:ems="10"
+                            android:id="@+id/runText"
+                            android:hint="0"
+                            android:textSize="30dp"
+                            android:onClick="enterRun" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/nrstim"
+                            android:id="@+id/runView"
+                            android:textSize="30dp"
+                            android:textColor="#000000" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:ems="10"
+                            android:id="@+id/nrstimText"
+                            android:hint="0"
+                            android:textSize="30dp"
+                            android:onClick="enterNrstim" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:id="@+id/startLayout">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/startTest"
+                    android:id="@+id/StartTest"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="50dp"
+                    android:onClick="onStartButton" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
 
 </RelativeLayout>
