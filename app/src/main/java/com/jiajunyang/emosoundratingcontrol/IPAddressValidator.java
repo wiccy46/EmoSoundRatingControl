@@ -1,8 +1,5 @@
 package com.jiajunyang.emosoundratingcontrol;
 
-/**
- * Created by jiajunyang on 26/05/16.
- */
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,6 +17,8 @@ public class IPAddressValidator{
     public IPAddressValidator(){
         pattern = Pattern.compile(IPADDRESS_PATTERN);
     }
+
+
 
     /**
      * Validate ip address with regular expression

@@ -111,14 +111,12 @@ public class MainActivity extends AppCompatActivity {
         String myNrStim = getVariable(R.id.nrstimText);
 
 
-
-        // Replace this with OSC.
-        // Conver string to int for int par in Python.
-
-
-
         if (validIP){
             Toast.makeText(getApplicationContext(), "New IP: "+ ip, Toast.LENGTH_LONG).show();
+            // Activate osc.
+            Thread initPy = new Thread(new InitOSC(ip, myPrefix, myUserid, myUsername
+                    ,modelIdx, myRun, myNrStim));
+            initPy.start();
             if (view.getId() == R.id.StartTest) {
                 Intent i = new Intent(MainActivity.this, Test.class);
                 startActivity(i);
