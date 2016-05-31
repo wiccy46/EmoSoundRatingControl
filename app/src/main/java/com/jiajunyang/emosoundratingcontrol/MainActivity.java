@@ -15,18 +15,24 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 
-/*
-* Initial set up should go here.
-* This include:
-* IP, studyprefix, UserID, Username, Sound model, Run, NrStim.
-* */
-
 
 public class MainActivity extends AppCompatActivity {
     boolean validIP;
     public static String ip  = "192.168.0.1";
+    public static int nrStim = 4 ;
     private RadioGroup modelChoice;
-    private int modelIdx = 0; // By default abstract
+    private String modelIdx = "abstract"; // By default abstract
+
+    // This is to let Test.java retrive IP address.
+    public static String retriveIP()
+    {
+        return ip;
+    }
+
+    public static int retriveNrStim()
+    {
+        return nrStim;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,36 +96,39 @@ public class MainActivity extends AppCompatActivity {
             myVar =yourIP.getText().toString();
         }
         catch (NullPointerException e){
-            Toast.makeText(getApplicationContext(),
-                    R.string.nullInput, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), R.string.nullInput, Toast.LENGTH_SHORT).show();
         }
         return myVar;
     }
 
     public void onModelChoice(View view){
-        modelIdx =  modelChoice.indexOfChild(findViewById(modelChoice.getCheckedRadioButtonId()));
+        int temp;
+        temp =  modelChoice.indexOfChild(findViewById(modelChoice.getCheckedRadioButtonId()));
+        if (temp == 0){ // Could increase depends on the number of choices.
+            modelIdx = "vocal";
+        } else {
+            modelIdx = "abstract";
+        }
     }
 
 
     public void onStartButton(View view) {
         ip = getIP();
-        // Need to OSC the init info to python here.
         String myPrefix = getVariable(R.id.prefixText); // init prefix.
         String myUserid = getVariable(R.id.idText);
         String myUsername = getVariable(R.id.usernameText);
         String myRun = getVariable(R.id.runText);
-        String myNrStim = getVariable(R.id.nrstimText);
-
-
+        nrStim = Integer.parseInt(getVariable(R.id.nrstimText));
+        String action = "init";
         if (validIP){
             Toast.makeText(getApplicationContext(), "New IP: "+ ip, Toast.LENGTH_LONG).show();
-            // Activate osc.
-            Thread initPy = new Thread(new InitOSC(ip, myPrefix, myUserid, myUsername
-                    ,modelIdx, myRun, myNrStim));
-            initPy.start();
+
+
+            Thread play = new Thread(new OSCSend(ip, action, 0, 0, 0, myPrefix, myUserid, myUsername, modelIdx, myRun, nrStim));
+            play.start();
             if (view.getId() == R.id.StartTest) {
                 Intent i = new Intent(MainActivity.this, Test.class);
-                startActivity(i);
+                startActivity(i); // Change page.
             }
         }
         else {
@@ -127,9 +136,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // This is to let Test.java retrive IP address.
-    public static String retriveIP()
-    {
-        return ip;
-    }
+
 }

@@ -20,22 +20,20 @@
             android:id="@+id/playButton"
             android:singleLine="false"
             android:text="@string/playSound"
-            android:layout_weight="1"
+            android:layout_weight="0.3"
             android:layout_gravity="center_vertical"
-            android:textSize="@dimen/abc_action_bar_progress_bar_size"
             android:allowUndo="false"
-            android:layout_marginRight="10dp"
-            android:onClick="onPlayClick" />
+            android:onClick="onPlayClick"
+            android:textSize="25sp" />
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="@string/nextSound"
             android:id="@+id/nextButton"
-            android:layout_weight="1"
+            android:layout_weight="0.3"
             android:layout_gravity="center_vertical"
-            android:textSize="@dimen/abc_action_bar_progress_bar_size"
-            android:layout_marginLeft="10dp"
+            android:textSize="25sp"
             android:onClick="onNextClick" />
     </LinearLayout>
 

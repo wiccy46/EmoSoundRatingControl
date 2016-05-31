@@ -13,28 +13,36 @@ import java.util.ArrayList;
  */
 
 public class OSCSend implements Runnable{
-    String myIP;
-    int myPort;
+    String myIP, prefix, userID, userName, run, nrStim;
+    int myPort = 7000;
     String action; // action define what function it uses.
     OSCPortOut oscPortOut;
     int emoIndex;
     int degreeIndex;
+    int count;
+    String model;
 
     // Updating parameters and setup OSC port out.
-    public OSCSend(String myIP, int myPort, String action, int emoIndex, int degreeIndex){
+    // Takes 5 parameters.
+    public OSCSend(String myIP, String action, int emoIndex, int degreeIndex, int count, String prefix, String userID, String userName
+            ,String model, String run, int nrStim ){
         this.myIP = myIP;
-        this.myPort = myPort;
         this.action = action;
         this.emoIndex = emoIndex;
         this.degreeIndex = degreeIndex;
+        this.count = count;
+        this.prefix = prefix;
+        this.userID = userID;
+        this.userName = userName;
+        this.run = run;
+        this.nrStim = Integer.toString(nrStim);
+        this.model = model; // model is int from the radiogroup. Hence it needs to be convert to string: vocal and
+
         try{
             // Connect to IP and port
             this.oscPortOut  = new OSCPortOut(InetAddress.getByName(myIP), myPort);
-            Log.d("OSCSendInitalisation", "OSC Port Establised.");
         } catch(UnknownHostException e) {
             Log.d("OSCSendInitalisation", "OSC Port Out UnknownHoseException");
-            //Error handling when your IP is not found
-            return;
         } catch (SocketException e){
             // Report error
             Log.d("OSCSendInitalisation", "Socket exception error!");
@@ -57,7 +65,7 @@ public class OSCSend implements Runnable{
 
     private void next(){
         ArrayList<Object> sendBang = new ArrayList<>();
-        sendBang.add("bang");
+        sendBang.add(count);
         OSCMessage message = new OSCMessage("/next", sendBang);
         Log.d("OSCRun", "Next Sound.");
         try{
@@ -74,7 +82,6 @@ public class OSCSend implements Runnable{
         OSCMessage message = new OSCMessage("/save", sendBang);
         Log.d("OSCRun", "Finish test and save file.");
         try{
-            // Send messages
             oscPortOut.send(message);
         } catch (Exception e){
             Log.d("OSC2", "Failed to send.");
@@ -108,6 +115,24 @@ public class OSCSend implements Runnable{
     }
 
 
+    private void init(){
+        ArrayList<Object> sendBang = new ArrayList<>();
+        sendBang.add(prefix);
+        sendBang.add(userID);
+        sendBang.add(userName);
+        sendBang.add(model);
+        sendBang.add(run);
+        sendBang.add(nrStim);
+        OSCMessage message = new OSCMessage("/init", sendBang);
+
+        try{
+            // Send messages
+            oscPortOut.send(message);
+        } catch (Exception e){
+            Log.d("OSC2", "Failed to send.");
+        }
+    }
+
     // Run the thread.
     @Override
     public void run(){
@@ -115,7 +140,6 @@ public class OSCSend implements Runnable{
             // Dont know why swich case doesnt work.
             if (action == "play"){
                 play();
-
             }
             else if (action == "next") {
                 next();
@@ -128,6 +152,8 @@ public class OSCSend implements Runnable{
             }
             else if (action == "save"){
                 save();
+            } else if (action == "init"){
+                init();
             }
 
             else{
