@@ -24,7 +24,7 @@
             android:layout_gravity="center_vertical"
             android:allowUndo="false"
             android:onClick="onPlayClick"
-            android:textSize="25sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Button
             android:layout_width="fill_parent"
@@ -33,7 +33,7 @@
             android:id="@+id/nextButton"
             android:layout_weight="0.3"
             android:layout_gravity="center_vertical"
-            android:textSize="25sp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:onClick="onNextClick" />
     </LinearLayout>
 
@@ -81,7 +81,8 @@
                     android:layout_gravity="center_vertical"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
-                    android:onClick="onEmoChoice" />
+                    android:onClick="onEmoChoice"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -95,7 +96,8 @@
                     android:layout_gravity="center_vertical"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
-                    android:onClick="onEmoChoice" />
+                    android:onClick="onEmoChoice"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -109,7 +111,8 @@
                     android:layout_gravity="center_vertical"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
-                    android:onClick="onEmoChoice" />
+                    android:onClick="onEmoChoice"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -124,7 +127,8 @@
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
                     android:nestedScrollingEnabled="false"
-                    android:onClick="onEmoChoice" />
+                    android:onClick="onEmoChoice"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -138,7 +142,8 @@
                     android:layout_gravity="center_vertical"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
-                    android:onClick="onEmoChoice" />
+                    android:onClick="onEmoChoice"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -152,7 +157,8 @@
                     android:layout_gravity="center_vertical"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
-                    android:onClick="onEmoChoice" />
+                    android:onClick="onEmoChoice"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -166,7 +172,8 @@
                     android:layout_gravity="center_vertical"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
-                    android:onClick="onEmoChoice" />
+                    android:onClick="onEmoChoice"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -180,7 +187,8 @@
                     android:layout_gravity="center_vertical"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
-                    android:onClick="onEmoChoice" />
+                    android:onClick="onEmoChoice"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -194,7 +202,8 @@
                     android:layout_gravity="center_vertical"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
-                    android:onClick="onEmoChoice" />
+                    android:onClick="onEmoChoice"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
             </RadioGroup>
         </LinearLayout>
     </LinearLayout>
@@ -243,7 +252,8 @@
                     android:layout_gravity="center_vertical"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
-                    android:onClick="onDegreeChoice" />
+                    android:onClick="onDegreeChoice"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -257,7 +267,8 @@
                     android:layout_gravity="center_vertical"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
-                    android:onClick="onDegreeChoice" />
+                    android:onClick="onDegreeChoice"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -272,7 +283,8 @@
                     android:checked="false"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
-                    android:onClick="onDegreeChoice" />
+                    android:onClick="onDegreeChoice"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -286,7 +298,8 @@
                     android:layout_gravity="center_vertical"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
-                    android:onClick="onDegreeChoice" />
+                    android:onClick="onDegreeChoice"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
 
 
 

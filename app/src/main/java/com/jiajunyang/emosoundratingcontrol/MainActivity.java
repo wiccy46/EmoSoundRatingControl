@@ -105,9 +105,9 @@ public class MainActivity extends AppCompatActivity {
         int temp;
         temp =  modelChoice.indexOfChild(findViewById(modelChoice.getCheckedRadioButtonId()));
         if (temp == 0){ // Could increase depends on the number of choices.
-            modelIdx = "vocal";
-        } else {
             modelIdx = "abstract";
+        } else {
+            modelIdx = "vocal";
         }
     }
 
