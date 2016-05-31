@@ -1,6 +1,7 @@
 package com.jiajunyang.emosoundratingcontrol;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioGroup;
@@ -39,14 +40,22 @@ public class Test extends Activity {
         action = "next";
         Thread play = new Thread(new OSCSend(myIP, action, 0, 0, count, "x", "x", "x", "x", "x", 1));
         play.start();
-        Toast.makeText(getApplicationContext(), count + " go", Toast.LENGTH_SHORT).show();
+        int temp = nrStim - count -1;
+        if (temp == 0){
+            Toast.makeText(getApplicationContext(), R.string.finishTest, Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(getApplicationContext(), temp + " left", Toast.LENGTH_SHORT).show();
+        }
         count += 1;
         if (count == nrStim ){
             action = "save";
             Thread play2 = new Thread(new OSCSend(myIP, action, 0, 0, count, "x", "x", "x", "x", "x", 1));
             play2.start();
             count = 0; // Reset count
+            Intent i = new Intent(Test.this, MainActivity.class);
+            startActivity(i); // Change page.
         }
+
     }
 
     // Choose which emo
@@ -65,6 +74,14 @@ public class Test extends Activity {
         play.start();
     }
 
+    public void onRestartClick(View view) {
+        Toast.makeText(getApplicationContext(), R.string.return2home, Toast.LENGTH_LONG).show();
+        if (view.getId() == R.id.restartButton) {
+            Intent i = new Intent(Test.this, MainActivity.class);
+            startActivity(i); // Change page.
+        }
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +89,5 @@ public class Test extends Activity {
         setContentView(R.layout.test); // Include the correspondent xml filename.
         emoChoice = (RadioGroup) findViewById(R.id.emoRadioGroup);
         degreeChoice = (RadioGroup) findViewById(R.id.degreeRadioGroup);
-
-
     }
 }

@@ -24,6 +24,10 @@
     <string name="average">Average</string>
     <string name="strong">Strong</string>
     <string name="myname">myname</string>
+    <string name="restart">Restart</string>
+    <string name="return2home">Return to Home</string>
+    <string name="creatorEmail">jyang@techfak.uni-bielefeld.de</string>
+    <string name="finishTest">Well done! Save file.</string>
 
     <!--
       This part is for the main page information enter.

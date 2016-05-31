@@ -201,7 +201,8 @@
                             android:gravity="center"
                             android:paddingTop="10dp"
                             android:paddingBottom="10dp"
-                            android:onClick="onModelChoice" />
+                            android:onClick="onModelChoice"
+                            android:textAppearance="?android:attr/textAppearanceLarge"/>
 
                         <RadioButton
                             android:layout_width="wrap_content"
@@ -214,7 +215,8 @@
                             android:gravity="center"
                             android:paddingTop="10dp"
                             android:paddingBottom="10dp"
-                            android:onClick="onModelChoice" />
+                            android:onClick="onModelChoice"
+                            android:textAppearance="?android:attr/textAppearanceLarge"/>
 
                     </RadioGroup>
 

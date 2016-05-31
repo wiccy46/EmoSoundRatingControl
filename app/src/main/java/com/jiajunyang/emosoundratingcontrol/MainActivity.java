@@ -33,6 +33,67 @@ public class MainActivity extends AppCompatActivity {
     {
         return nrStim;
     }
+    private String getVariable(int id){
+        String myVar  = "0";
+        EditText yourIP = (EditText) findViewById(id);
+        try {
+            myVar =yourIP.getText().toString();
+        }
+        catch (NullPointerException e){
+            Toast.makeText(getApplicationContext(), R.string.nullInput, Toast.LENGTH_SHORT).show();
+        }
+        return myVar;
+    }
+
+    public void onModelChoice(View view){
+        int temp;
+        temp =  modelChoice.indexOfChild(findViewById(modelChoice.getCheckedRadioButtonId()));
+        if (temp == 0){ // Could increase depends on the number of choices.
+            modelIdx = "abstract";
+        } else {
+            modelIdx = "vocal";
+        }
+    }
+
+
+    public void onStartButton(View view) {
+        ip = getIP();
+        String myPrefix = getVariable(R.id.prefixText); // init prefix.
+        String myUserid = getVariable(R.id.idText);
+        String myUsername = getVariable(R.id.usernameText);
+        String myRun = getVariable(R.id.runText);
+        nrStim = Integer.parseInt(getVariable(R.id.nrstimText));
+        String action = "init";
+        if (validIP){
+            Toast.makeText(getApplicationContext(), "New IP: "+ ip, Toast.LENGTH_LONG).show();
+            Thread play = new Thread(new OSCSend(ip, action, 0, 0, 0, myPrefix, myUserid, myUsername, modelIdx, myRun, nrStim));
+            play.start();
+            if (view.getId() == R.id.StartTest) {
+                Intent i = new Intent(MainActivity.this, Test.class);
+                startActivity(i); // Change page.
+            }
+        }
+        else {
+            Toast.makeText(getApplicationContext(), R.string.invalidIP, Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private String getIP(){
+        String myIP;
+        EditText yourIP = (EditText) findViewById(R.id.ipText);
+        IPAddressValidator ipvalidator = new IPAddressValidator();
+        try{
+            myIP = yourIP.getText().toString();
+        }
+        catch (NullPointerException e){
+            Toast.makeText(getApplicationContext(),
+                    R.string.nullInput, Toast.LENGTH_SHORT).show();
+            myIP = "192.168.0.1";
+        }
+        validIP = ipvalidator.validate(myIP);
+        return myIP;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,69 +133,9 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private String getIP(){
-        String myIP;
-        EditText yourIP = (EditText) findViewById(R.id.ipText);
-        IPAddressValidator ipvalidator = new IPAddressValidator();
-        try{
-            myIP = yourIP.getText().toString();
-        }
-        catch (NullPointerException e){
-            Toast.makeText(getApplicationContext(),
-                    R.string.nullInput, Toast.LENGTH_SHORT).show();
-            myIP = "192.168.0.1";
-        }
-        validIP = ipvalidator.validate(myIP);
-        return myIP;
-    }
 
 
-    private String getVariable(int id){
-        String myVar  = "0";
-        EditText yourIP = (EditText) findViewById(id);
-        try {
-            myVar =yourIP.getText().toString();
-        }
-        catch (NullPointerException e){
-            Toast.makeText(getApplicationContext(), R.string.nullInput, Toast.LENGTH_SHORT).show();
-        }
-        return myVar;
-    }
 
-    public void onModelChoice(View view){
-        int temp;
-        temp =  modelChoice.indexOfChild(findViewById(modelChoice.getCheckedRadioButtonId()));
-        if (temp == 0){ // Could increase depends on the number of choices.
-            modelIdx = "abstract";
-        } else {
-            modelIdx = "vocal";
-        }
-    }
-
-
-    public void onStartButton(View view) {
-        ip = getIP();
-        String myPrefix = getVariable(R.id.prefixText); // init prefix.
-        String myUserid = getVariable(R.id.idText);
-        String myUsername = getVariable(R.id.usernameText);
-        String myRun = getVariable(R.id.runText);
-        nrStim = Integer.parseInt(getVariable(R.id.nrstimText));
-        String action = "init";
-        if (validIP){
-            Toast.makeText(getApplicationContext(), "New IP: "+ ip, Toast.LENGTH_LONG).show();
-
-
-            Thread play = new Thread(new OSCSend(ip, action, 0, 0, 0, myPrefix, myUserid, myUsername, modelIdx, myRun, nrStim));
-            play.start();
-            if (view.getId() == R.id.StartTest) {
-                Intent i = new Intent(MainActivity.this, Test.class);
-                startActivity(i); // Change page.
-            }
-        }
-        else {
-            Toast.makeText(getApplicationContext(), R.string.invalidIP, Toast.LENGTH_LONG).show();
-        }
-    }
 
 
 }
